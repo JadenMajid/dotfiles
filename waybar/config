@@ -1,0 +1,169 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 1,
+  "spacing": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/platform-profile",
+    "temperature",
+    "cpu",
+    "custom/memory",
+    "custom/network"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/spotify",
+    "wireplumber",
+    "idle_inhibitor",
+    "tray"
+  ],
+  "hyprland/workspaces": {
+    "format": "<b>{icon}</b>",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      //"active": "",
+      //"default": "",
+      "music": "",
+      "music-active": ""
+    },
+    "icon-size": 10,
+    "sort-by": "id",
+    "show-special": true,
+    "special-visible-only": false,
+    "rewrite": {},
+    "ignore-workspaces": [
+      "special:music",
+      "special:discord"
+    ],
+    "persistent-workspaces": {
+      "special:magic": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "clock": {
+    "format": "{:%Y-%m-%d | %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "max-volume": 100,
+    "scroll-step": 5,
+    "on-click": "GTK_THEME=Adwaita:dark pavucontrol",
+    "on-click-right": "~/.config/waybar/scripts/cycle_audio_default.sh"
+  },
+  "custom/memory": {
+    "exec": "~/.config/waybar/scripts/memory-tooltip.sh",
+    "interval": 3,
+    "format": "{text} ",
+    "tooltip": true,
+    "return-type": "json"
+  },
+  "custom/network": {
+    "exec": "~/.config/waybar/scripts/network-sparkline.sh",
+    "on-click": "kitty -e bmon",
+    "interval": 1,
+    "return-type": "json"
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": "{} <span size=\"large\" ></span>",
+    "return-type": "json",
+    "on-click": "playerctl play-pause -p spotify",
+    "on-scroll-up": "playerctl next -p spotify",
+    "on-scroll-down": "playerctl previous -p spotify",
+    "tooltip": true
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6} ({usage:>2}%) ",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "on-click": "kitty -e btop"
+  },
+  "temperature": {
+    "format": "{temperatureC}°C",
+    "tooltip": false,
+    "hwmon-path": "/sys/devices/platform/nct6775.2592/hwmon/hwmon3/temp13_input"
+  },
+  "network": {
+    "format": "",
+    "format-ethernet": "\udb83\udc9d",
+    "format-wifi": "{icon}",
+    "format-disconnected": "\udb83\udc9c",
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28"
+    ],
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "nm-apple"
+  },
+  "bluetooth": {
+    "format": "\udb80\udcaf",
+    "format-disabled": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb1",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 20
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "\udb80\udd76",
+      "deactivated": "\udb83\udfaa"
+    }
+  }
+}

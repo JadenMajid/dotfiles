@@ -1,0 +1,175 @@
+/* --- Global Styles --- */
+* {
+  font-family: 'Martian Mono Nerd Font', 'JetBrainsMono ', 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding: 0.1em 0.1em;
+}
+
+/* --- Waybar Container --- */
+#waybar {
+  color: #c6d0f5;
+  background-color: transparent;
+  margin: 0px 7px;
+  font-weight: 500;
+  padding: 1em 2em;
+  padding-bottom: 0;
+}
+
+/* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
+#bluetooth,
+#wireplumber,
+#backlight,
+#network,
+#custom-lock,
+#idle_inhibitor,
+#custom-spotify,
+#battery,
+#custom-memory,
+#custom-network,
+#workspaces,
+#custom-uptime,
+#cpu,
+#clock,
+#tray,
+#temperature {
+  background-color: #1a1b26;
+  padding: 0px 0.7rem;
+  margin: 0px 0px;
+  border-radius: 6px; /* This module is always rounded */
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces button:hover,
+#temperature:hover,
+#custom-memory:hover,
+#custom-uptime:hover,
+#custom-network:hover,
+#custom-spotify:hover,
+#cpu:hover,
+#bluetooth:hover,
+#idle_inhibitor:hover,
+#wireplumber:hover,
+#backlight:hover,
+#network:hover,
+#clock:hover,
+#custom-lock:hover,
+#tray button:hover,
+#battery:hover {
+  background-color: rgb(41, 42, 53);
+  color: #99D1DB;
+  box-shadow: inset 0 0 0 2px #99d1db ; 
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+  background-color: #2a353c;
+}
+/* Example styling for special workspace buttons */
+#workspaces button.special {
+  background-color: #2a3a4d; /* A distinct background color */
+  color: #eceff4;           /* Text color */
+  font-weight: bold;        /* Make the text bold */
+}
+
+/* Example styling for active special workspaces */
+#workspaces button.special.active {
+    background-color: #6286b3; /* Different color when active */
+}
+
+#custom-uptime {
+  margin-right: 5px; /* Spacing after the uptime module */
+}
+/* Simple Hover effects for individual left modules - BRIGHTER COLOR */
+
+
+#workspaces button {
+  color: #babbf1;
+  border-radius: 5px; /* Workspaces buttons are always rounded */
+  background-color: #1a1b26;
+/*  transition: all 0.2s ease-in-out;*/
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  margin: 0.3em 0.3em;
+  padding: 0.2em 0.3em;
+  padding-right: 0.35em;
+  outline: none;
+}
+
+#workspaces button.active {
+  color: #99d1db;
+  background-color: rgba(153, 209, 219, 0.3);
+}
+
+#bluetooth {
+  margin-left: 0px; 
+}
+
+#custom-uptime {
+  color: #babbf1;
+}
+#cpu {
+  color: #c6d0f5;
+}
+#temperature {
+  color: #c6d0f5;
+}
+
+#clock {
+  font-weight: 500;
+}
+
+#wireplumber{
+  color: #c6d0f5;
+}
+#network {
+  color: #c6d0f5;
+  border-radius: 6px;
+}
+
+#network.disconnected {
+  color: #e78284;
+}
+
+#bluetooth {
+  color: #888888;
+  font-size: 16px;
+}
+#bluetooth.on {
+  color: #2196f3;
+}
+#bluetooth.connected {
+  color: #99d1db;
+}
+
+/* --- Tooltip Styles --- */
+tooltip {
+  background-color: #1a1b26;
+  color: #99d1db;
+  padding: 10px 0px;
+  margin: 0px 0px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 2px #99d1db ; 
+  font-size: 12px;
+}
+tooltip label {
+
+  color: #99d1db;
+}
+
+#tray {
+  background-color: #1a1b26;
+  border-radius: 6px; /* These modules are always rounded */
+  min-width: 0;
+  border: none;
+  /* Transition for background-color and color only */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#tray.icon{
+
+}
+
+
