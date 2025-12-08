@@ -85,7 +85,8 @@
     "max-volume": 100,
     "scroll-step": 5,
     "on-click": "GTK_THEME=Adwaita:dark pavucontrol",
-    "on-click-right": "~/.config/waybar/scripts/cycle_audio_default.sh"
+    "on-click-right": "~/.config/waybar/scripts/cycle_audio_default.sh",
+    "on-click-middle": "easyeffects"
   },
   "custom/memory": {
     "exec": "~/.config/waybar/scripts/memory-tooltip.sh",

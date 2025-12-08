@@ -8,7 +8,7 @@
 # wpctl status -n | grep -zoP '(?<=Sinks:)(?s).*?(?=├─)' | grep -a "vol:"
 # Example: SINKS_TO_SKIP=("Monitor Aux" "Speakers")
 # If no skip names are added, this script will switch between every available audio sink (output).
-SINKS_TO_SKIP=("none")
+SINKS_TO_SKIP=("easyeffects_sink")
 
 # Define Aliases (OPTIONAL)
 ALIASES="alsa_output.pci-0000_2b_00.4.analog-stereo:Speakers\nbluez_output.80_99_E7_DF_CE_14.1:XM4 Bluetooth\nalsa_output.pci-0000_29_00.1.hdmi-stereo:Monitor Aux\n"
