@@ -1,0 +1,131 @@
+@import "colors.css";
+
+/* --- Global Styles --- */
+* {
+  font-family: 'Martian Mono Nerd Font', sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Floating Bar Container */
+#waybar {
+  background-color: transparent;
+  color: @text;
+  margin: 2px 5px;
+}
+
+/* Individual Module Groups (Consistent Height Islands) */
+#workspaces,
+#clock,
+#tray,
+#custom-cider,
+#custom-network,
+#cpu,
+#custom-temperature,
+#custom-memory,
+#wireplumber,
+#network,
+#bluetooth,
+#idle_inhibitor {
+  background-color: @surface;
+  color: @text;
+  padding: 0 10px; /* Vertical padding set to 0, controlled by min-height */
+  margin: 4px 4px;
+  border-radius: 6px;
+  border: 1px solid alpha(@primary, 0.1);
+  transition: all 0.2s ease-in-out;
+  
+  /* Force consistent height */
+  min-height: 26px;
+}
+
+/* Hover Effects for All Pills */
+#workspaces:hover,
+#clock:hover,
+#tray:hover,
+#custom-cider:hover,
+#custom-network:hover,
+#cpu:hover,
+#custom-temperature:hover,
+#custom-memory:hover,
+#wireplumber:hover,
+#network:hover,
+#bluetooth:hover,
+#idle_inhibitor:hover {
+  background-color: @surface_variant;
+  color: @primary;
+  border: 1px solid @primary;
+}
+
+/* Grouping Performance Pill (Left) */
+#cpu, #custom-temperature, #custom-memory, #custom-network {
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 0;
+}
+#cpu { border-top-left-radius: 6px; border-bottom-left-radius: 6px; margin-left: 4px; }
+#custom-network { border-top-right-radius: 6px; border-bottom-right-radius: 6px; margin-right: 4px; }
+
+/* Grouping Quick Settings Pill (Right) */
+#network, #bluetooth, #wireplumber {
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 0;
+}
+#network { border-top-left-radius: 6px; border-bottom-left-radius: 6px; margin-left: 4px; }
+#wireplumber { border-top-right-radius: 6px; border-bottom-right-radius: 6px; margin-right: 4px; }
+
+/* Workspaces */
+#workspaces button {
+  color: @secondary;
+  font-size: 16px;
+  padding: 0 4px;
+  margin: 2px 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  color: @primary;
+  background-color: alpha(@primary, 0.1);
+}
+
+#workspaces button.special {
+  color: @primary;
+  font-size: 14px;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+  color: @surface;
+}
+
+#workspaces button:hover {
+  background-color: alpha(@text, 0.1);
+  color: @primary;
+}
+
+/* Specific module weights */
+#clock {
+  font-weight: bold;
+}
+
+#custom-cider {
+  color: @primary;
+  font-weight: bold;
+}
+
+/* Tooltips */
+tooltip {
+  background-color: @surface;
+  border: 1px solid @primary;
+  border-radius: 6px;
+}
+
+tooltip label {
+  color: @text;
+  font-family: 'Martian Mono Nerd Font', monospace;
+  padding: 8px;
+}

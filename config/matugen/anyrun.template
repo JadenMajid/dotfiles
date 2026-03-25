@@ -1,0 +1,39 @@
+@define-color primary #{{colors.primary.default.hex_stripped}};
+@define-color surface #{{colors.surface.default.hex_stripped}};
+@define-color text #{{colors.on_surface.default.hex_stripped}};
+
+* {
+  all: unset;
+  font-family: "Martian Mono Nerd Font";
+  font-size: 14px;
+  transition: none; /* Disable all animations/transitions */
+}
+
+#window {
+  background-color: transparent;
+}
+
+#main {
+  background-color: @surface;
+  border: 1px solid alpha(@primary, 0.3);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+#entry {
+  background-color: alpha(@text, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: @text;
+}
+
+#match.selected {
+  background-color: alpha(@primary, 0.2);
+  border-radius: 8px;
+}
+
+#match {
+  padding: 5px;
+  color: @text;
+}

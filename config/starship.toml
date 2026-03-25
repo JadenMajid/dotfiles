@@ -1,0 +1,33 @@
+# Starship Configuration
+format = "$all"
+
+# Include Matugen Colors
+# Note: As of 2026, Starship supports top-level includes or we can just append.
+# Since Starship doesn't have a native 'include' for the whole file yet, 
+# we use the Matugen-generated file as a base and append the rest.
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = " "
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[package]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = " "
+
+# Custom Matugen Integration
+# We'll actually have Matugen overwrite the starship.toml directly for the most dynamic feel.

@@ -1,0 +1,30 @@
+[config]
+wallpaper.set = false
+wallpaper.command = "hyprpaper"
+
+[templates.hyprland]
+input_path = "/home/jaden/.config/matugen/hyprland.template"
+output_path = "/home/jaden/.config/hypr/configs/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.hyprlock]
+input_path = "/home/jaden/.config/matugen/hyprlock.template"
+output_path = "/home/jaden/.config/hypr/hyprlock_colors.conf"
+
+[templates.waybar]
+input_path = "/home/jaden/.config/matugen/waybar.template"
+output_path = "/home/jaden/.config/waybar/colors.css"
+post_hook = "pkill -SIGUSR2 waybar"
+
+[templates.kitty]
+input_path = "/home/jaden/.config/matugen/kitty.template"
+output_path = "/home/jaden/.config/kitty/theme.conf"
+post_hook = "killall -USR1 kitty"
+
+[templates.starship]
+input_path = "/home/jaden/.config/matugen/starship.template"
+output_path = "/home/jaden/.config/starship.toml"
+
+[templates.anyrun]
+input_path = "/home/jaden/.config/matugen/anyrun.template"
+output_path = "/home/jaden/.config/anyrun/style.css"

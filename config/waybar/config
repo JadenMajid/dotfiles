@@ -1,0 +1,127 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "margin-top": 3,
+  "margin-left": 5,
+  "margin-right": 5,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "cpu",
+    "custom/temperature",
+    "custom/memory",
+    "custom/network"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/cider",
+    "network",
+    "bluetooth",
+    "wireplumber",
+    "idle_inhibitor",
+    "tray"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": "",
+      "urgent": "",
+      "special": "<b>Δ</b>"
+    },
+    "show-special": true,
+    "persistent-workspaces": {
+      "1": [], "2": [], "3": [], "4": [], "5": []
+    }
+  },
+
+  "clock": {
+    "format": "\\\\ {:%Y-%m-%d \\\\ %H:%M} \\\\",
+    "format-alt": "󰃭 {:%a, %d %b}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": " {usage:02}%",
+    "on-click": "kitty -e btop"
+  },
+
+  "custom/temperature": {
+    "exec": "~/.config/waybar/scripts/temperature-tooltip.sh",
+    "interval": 5,
+    "format": " {}",
+    "tooltip": true,
+    "return-type": "json"
+  },
+
+  "custom/memory": {
+    "exec": "~/.config/waybar/scripts/memory-tooltip.sh",
+    "interval": 3,
+    "format": " {text}",
+    "tooltip": true,
+    "return-type": "json"
+  },
+
+  "custom/network": {
+    "exec": "~/.config/waybar/scripts/network-sparkline.sh",
+    "on-click": "kitty -e bmon",
+    "interval": 1,
+    "return-type": "json"
+  },
+
+  "custom/cider": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/scripts/audio_continuous.py",
+    "return-type": "json",
+    "format": "󰎆 {}",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "max-length": 35
+  },
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰖪 Off",
+    "on-click": "nm-connection-editor",
+    "on-click-right": "nm-applet --indicator"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {device_alias}",
+    "on-click": "blueman-manager",
+    "on-click-right": "blueman-applet"
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume:02}%",
+    "format-muted": "󰝟",
+    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/waybar/scripts/cycle_audio_default.sh"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰈈",
+      "deactivated": "󰈉"
+    }
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 10
+  }
+}
