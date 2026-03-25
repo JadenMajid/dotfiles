@@ -88,6 +88,6 @@ map ctrl+shift+q close_tab
 
 
 # BEGIN_KITTY_THEME
-# zenwritten_dark
+# Aquarium Dark
 include current-theme.conf
 # END_KITTY_THEME
